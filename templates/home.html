@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <style>
+        table
+        {
+
+        margin-left: auto;
+        margin-right: auto;
+        width:50%;
+        height:100%;
+        }
+
+         th, td {
+  padding: 15px;
+}
+    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  </head>
+  <body style="">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <h1  style='margin: auto;width: 60%;border: 3px solid #75AD21; padding: 10px; text-align:center;background-color: rgba(0, 0, 0, 0.15);'> Password Generator</h1>
+
+    <form action="" method="post"  class="container">
+        {% csrf_token %}
+        <table>
+
+           <tr>
+                <th>
+                    <label for="inputEmail3">Enter User Name</label>
+                </th>
+                <td>
+                  <input type="text" class="form-control" placeholder="USER NAME" value="{{user}}" name="uname" id="name">
+                </td>
+           </tr>
+            <tr>
+                <th><label >Enter Password Length</label></th>
+                <td>
+                  <input type="number" class="form-control" value="{{length}}" name="password" id="password">
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    <button type="submit" class="btn btn-primary" name="generate" id="generate" >Generate Password</button>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <label  >Generated Password</label>
+                </th>
+                <td>
+                    <input type="text" class="form-control" id="inputEmail3" value="{{duration}}" >
+
+                </td>
+            </tr>
+            <tr>
+               <td>
+                   <button type="submit" class="btn btn-primary" name="accept" id="accept">Accept</button>
+               </td>
+                <td>
+                    <button type="submit" class="btn btn-primary"  name="reject" id="reject">Reject</button>
+
+                </td>
+            </tr>
+
+        </table>
+    </form>
+  </body>
+</html>
